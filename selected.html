@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 
 <head>
 
 <meta charset="UTF-8">
 
 <meta name="viewport"
-content="width=device-width,initial-scale=1">
+content="width=device-width, initial-scale=1.0">
 
-<title>Selection</title>
+<title>Signature Stitch LLC</title>
 
 <link rel="stylesheet"
 href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
 rel="stylesheet">
 
 </head>
@@ -27,31 +26,31 @@ rel="stylesheet">
 
 <div class="font-card">
 
-<h2 id="design"></h2>
+<h2 id="designText"></h2>
 
-<h3 id="font"></h3>
+<h3 id="fontName"></h3>
 
-<p>
+<p class="subtitle">
 
 Please show this screen to the seamstress.
 
 </p>
 
-</div>
+<a href="index.html">
+
+<button>
+
+Start Over
+
+</button>
+
+</a>
 
 </div>
 
-<script>
+</div>
 
-document.getElementById("design")
-.innerHTML=
-localStorage.getItem("customerDesign");
-
-document.getElementById("font")
-.innerHTML=
-localStorage.getItem("selectedFont");
-
-</script>
+<script src="selected.js"></script>
 
 </body>
 
