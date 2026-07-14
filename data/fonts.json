@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Abigail",
+    "category": "Cursive",
+    "image": "images/fonts/abigail.png"
+  },
+  {
+    "name": "Afterglow",
+    "category": "Cursive",
+    "image": "images/fonts/afterglow.png"
+  },
+  {
+    "name": "Alexandra",
+    "category": "Cursive",
+    "image": "images/fonts/alexandra.png"
+  },
+  {
+    "name": "Arial Black",
+    "category": "Block",
+    "image": "images/fonts/arialblack.png"
+  },
+  {
+    "name": "Athletic",
+    "category": "Sports",
+    "image": "images/fonts/athletic.png"
+  }
+]
