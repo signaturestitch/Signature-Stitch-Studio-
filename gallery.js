@@ -2,107 +2,55 @@ const design = localStorage.getItem("customerDesign");
 const category = localStorage.getItem("category");
 
 document.getElementById("galleryTitle").innerHTML =
-`${category} Fonts`;
+category + " Fonts";
 
-const sampleFonts = [
+fetch("data/fonts.json")
 
-{
-name:"Abigail",
-category:" Cursive"
-},
+.then(response=>response.json())
 
-{
-name:"Afterglow",
-category:" Cursive"
-},
-
-{
-name:"Alexandra",
-category:" Cursive"
-},
-
-{
-name:"Algerian",
-category:" Block"
-},
-
-{
-name:"Arial Black",
-category:" Block"
-},
-
-{
-name:"Athletic",
-category:" Sports"
-},
-
-{
-name:"Baby Script",
-category:" Kids"
-},
-
-{
-name:"Cowboy",
-category:" Western"
-},
-
-{
-name:"Diamond Monogram",
-category:" Monogram"
-},
-
-{
-name:"Christmas Joy",
-category:" Holiday"
-}
-
-];
+.then(fonts=>{
 
 const container =
 document.getElementById("fontContainer");
 
-sampleFonts
-.filter(font=>font.category===category)
+fonts
+
+.filter(font=>font.category===category.replace(/[^a-zA-Z ]/g,"").trim())
+
 .forEach(font=>{
 
-const card=document.createElement("div");
+const card =
+document.createElement("div");
 
 card.className="font-card";
 
 card.innerHTML=`
 
-<div class="preview">
+<img
+src="${font.image}"
+class="fontPreview">
 
-${design}
+<h3>${font.name}</h3>
 
-</div>
-
-<div class="font-name">
-
-${font.name}
-
-</div>
-
-<button class="selectBtn">
-
-Select
-
-</button>
+<button>Select</button>
 
 `;
 
 card.querySelector("button")
-.addEventListener("click",()=>{
+.onclick=()=>{
 
 localStorage.setItem(
 "selectedFont",
 font.name
 );
 
-window.location.href="selected.html";
+window.location.href=
+"selected.html";
 
-});
+};
 
 container.appendChild(card);
+
+});
 
 });
