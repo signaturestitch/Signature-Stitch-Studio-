@@ -1,1 +1,1 @@
-# Signature-Stitch-Studio-
+# Signature-Stitch-Studio
